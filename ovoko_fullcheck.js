@@ -1,9 +1,17 @@
-// ovoko_engine.js — AUTO z ovoko_fullcheck.js (NIE EDYTUJ RECZNIE; edytuj zrodlo + regeneruj)
-window.OvokoEngine={build:function(maps){
-const M=JSON.parse(maps.accountMapJson).map;
-const CAT=String(maps.catalogCsv).split(/\r?\n/).slice(1).filter(Boolean).map(l=>{const p=l.split(',');return {id:p[0],mf:p[1],model:p[2],ys:+p[3]||0,ye:+p[4]||9999};});
+// ovoko_fullcheck.js — OVOKO FULL CHECK (silnik reguł, Node)
+// Wejście:  node ovoko_fullcheck.js paczka.json [jaworze|bielsko]
+//   paczka.json = [{uid,title,mc,catId}]  (dump z przeglądarki)
+// Wyjście:  plan.json = [{uid,title,car_id,category{id,name,path},position,firstCode}]
+// Reguły: rozdz. 7 (firstCode), 8 (position), 9 (car_id), 11A (kategorie) + ovoko_mapa_kategorii.md
+const fs=require('fs');
+const path=require('path');
+const DIR=__dirname+path.sep;
+const acct=(process.argv[3]||'jaworze').toLowerCase();
+const MAPFILE = acct==='bielsko' ? 'bielsko_car_models_map_2026-05-29.json' : 'jaworze_car_models_map_2026-05-29.json';
+const M=JSON.parse(fs.readFileSync(DIR+MAPFILE,'utf8')).map;
+const CAT=fs.readFileSync(DIR+'ovoko_car_models_catalog_20260529.csv','utf8').split(/\r?\n/).slice(1).filter(Boolean).map(l=>{const p=l.split(',');return {id:p[0],mf:p[1],model:p[2],ys:+p[3]||0,ye:+p[4]||9999};});
 const CATBRANDS={}; for(const r of CAT){const u=r.mf.toUpperCase(); if(!CATBRANDS[u])CATBRANDS[u]=r.mf;}
-const CATS=JSON.parse(maps.categoriesJson);
+const CATS=JSON.parse(fs.readFileSync(DIR+'ovoko_categories.json','utf8'));
 function flatCats(o,acc){if(Array.isArray(o)){o.forEach(x=>flatCats(x,acc));return acc;}if(o&&typeof o==='object'){if(o.id&&o.name)acc.push({id:String(o.id),name:o.name,path:o.path||''});for(const k in o)if(typeof o[k]==='object')flatCats(o[k],acc);}return acc;}
 const CATFLAT=flatCats(CATS,[]);
 function catObj(id){const c=CATFLAT.find(x=>x.id===String(id));return c?{id:c.id,name:c.name,path:c.path}:{id:String(id),name:'',path:''};}
@@ -36,7 +44,9 @@ function getPos(title){const t=' '+norm(title)+' ';
 
 // ---- rozdz. 11A + mapa: kategoria z tytulu — REGULY Z PLIKU ovoko_mapa_kategorii.json (2026-07-02) ----
 // Nowe typy czesci dopisuj w JSON (pierwsza pasujaca regula od gory wygrywa) — NIE w kodzie.
-const CATRULES=(JSON.parse(maps.mapaKategoriiJson).rules)||[];
+let CATRULES=[];
+try{ CATRULES=JSON.parse(fs.readFileSync(DIR+'ovoko_mapa_kategorii.json','utf8')).rules||[]; }
+catch(e){ console.error('!! BRAK/BLAD ovoko_mapa_kategorii.json — resolveCat zwroci null: '+e.message); }
 function resolveCat(title){const t=' '+norm(title)+' ';
   const F=/\b(PRZOD|PRZEDNI|PRZEDNIA|PRZEDNIE|FRONT)\b/.test(t), B=/\b(TYL|TYLNY|TYLNA|TYLNE|REAR)\b/.test(t);
   const inc=w=>t.includes(w);
@@ -220,11 +230,10 @@ function validate(it,car,catId,pos,fc){
   return f;
 }
 
-// ---- MAIN (browser) ----
-function run(items){
-
+// ---- MAIN ----
+const pkg=JSON.parse(fs.readFileSync(process.argv[2],'utf8'));
 const plan=[]; const newCats=new Set(); const flags=[];
-for(const it of items){
+for(const it of pkg){
   const fc=firstCode(it.mc);
   const pos=getPos(it.title);
   const car=resolveCar(it.title);
@@ -269,8 +278,9 @@ for(const it of items){
 // duplikaty numeru w paczce (2 szt. czy błąd?)
 const nc={}; plan.forEach(p=>{if(p.firstCode)nc[p.firstCode]=(nc[p.firstCode]||0)+1;});
 Object.keys(nc).filter(n=>nc[n]>1).forEach(n=>flags.push(`[INFO] numer ${n} ×${nc[n]} w paczce (osobne sztuki czy duplikat?)`));
-return {plan,newCategories:[...newCats],flags};
-}
-
-return {run:run,firstCode:firstCode,getPos:getPos,resolveCat:resolveCat,resolveCar:resolveCar,carFromOEPrefix:carFromOEPrefix,catObj:catObj,CATFLAT:CATFLAT,M:M,CAT:CAT};
-}};
+fs.writeFileSync(DIR+'plan.json', JSON.stringify({plan,newCategories:[...newCats],flags},null,1));
+console.log('PLAN -> plan.json  ('+plan.length+' pozycji)   konto: '+acct);
+console.log('Nowe kategorie do clone:', [...newCats].join(',')||'(brak)');
+console.log('FLAGI ('+flags.length+'):'); flags.forEach(f=>console.log('  ! '+f));
+console.log('\nPODGLĄD:');
+plan.forEach(p=>console.log(`  car${p.car_id||'-'} | cat${p.category?p.category.id:'-'} | pos${p.position||'-'} | ${p.firstCode} | ${p.title.slice(0,42)}`));
