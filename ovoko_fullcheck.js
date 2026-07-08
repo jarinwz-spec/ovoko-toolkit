@@ -162,7 +162,11 @@ const OEPREFIX=[
   {re:/^95C/i, models:['3718']},        // Porsche Macan II (95C, 2024-)
   {re:/^95B/i, models:['1961','2058']}, // Porsche Macan I (95B): 2014-2018 / 2019-
   {re:/^82A/i, models:['2175']},        // Audi A1 II (82A, 2018-)
-  {re:/^8Y/i, models:['2877']},         // Audi A3 IV (8Y, 2020-)
+  {re:/^8Y/i, models:['2877']},
+  {re:/^8W/i, models:['44']},        // Audi A4 B9 (8W)
+  {re:/^8V/i, models:['22']},        // Audi A3 8V
+  {re:/^8S/i, models:['323']},       // Audi TT 8S
+  {re:/^5F/i, models:['1692']},      // Seat Leon 5F (III)         // Audi A3 IV (8Y, 2020-)
 ];
 function carFromOEPrefix(fc,title){
   const code=String(fc||'').replace(/[^A-Za-z0-9]/g,'');
