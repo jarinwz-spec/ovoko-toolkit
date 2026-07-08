@@ -1,0 +1,1092 @@
+{
+ "meta": {
+  "note": "MAPA KATEGORII OVOKO - czytana przez ovoko_fullcheck.js (resolveCat). Reguly OD GORY, pierwsza pasujaca wygrywa. Wzorce = substring na ZNORMALIZOWANYM tytule (wersaliki, bez polskich znakow). Pola: all=[wszystkie musza wystapic], any=[wystarczy jedno], none=[zadne nie moze], requireSide: F/B (wymaga przod/tyl w tytule), cat=stala kategoria, catF/catB=kategoria wg osi (domyslnie przod). NOWE TYPY DOPISUJ TUTAJ - kod zostaje bez zmian.",
+  "updated": "2026-07-02"
+ },
+ "rules": [
+  {
+   "all": [
+    "CZUJNIK",
+    "PIESZ"
+   ],
+   "cat": "896",
+   "name": "Czujnik pieszych -> poduszki powietrzne (Pedestrian airbag) - decyzja Jarka"
+  },
+  {
+   "any": [
+    "STREFA ZGNIOTU"
+   ],
+   "catF": "1341",
+   "catB": "1166",
+   "note": "crash box / crumple zone (strefa zgniotu / odboj) -> impact absorber, NOT fog light"
+  },
+  {
+   "all": [
+    "DRZWI"
+   ],
+   "none": [
+    "BOCZEK",
+    "TAPICERKA",
+    "LISTWA",
+    "SZYBA",
+    "KLAMKA",
+    "ZAMEK",
+    "OGRANICZNIK",
+    "GLOSNIK",
+    "MECHANIZM",
+    "PODNOSNIK",
+    "USZCZELKA",
+    "WSPORNIK",
+    "ZAWIAS",
+    "OSLONA",
+    "RAMKA",
+    "LUSTERK",
+    "KIERUNKOWSKAZ",
+    "MOCOWANIE"
+   ],
+   "requireSide": "B",
+   "cat": "606",
+   "name": "Drzwi tylne (rear door)"
+  },
+  {
+   "all": [
+    "DRZWI"
+   ],
+   "none": [
+    "BOCZEK",
+    "TAPICERKA",
+    "LISTWA",
+    "SZYBA",
+    "KLAMKA",
+    "ZAMEK",
+    "OGRANICZNIK",
+    "GLOSNIK",
+    "MECHANIZM",
+    "PODNOSNIK",
+    "USZCZELKA",
+    "WSPORNIK",
+    "ZAWIAS",
+    "OSLONA",
+    "RAMKA",
+    "LUSTERK",
+    "KIERUNKOWSKAZ",
+    "MOCOWANIE",
+    "PRZOD",
+    "TYL"
+   ],
+   "cat": "586",
+   "name": "Drzwi bez osi -> przod (fallback)"
+  },
+  {
+   "all": [
+    "BLOTNIK"
+   ],
+   "none": [
+    "LISTWA",
+    "NADKOL",
+    "USZCZELKA",
+    "WYGLUSZENIE",
+    "OSLONA",
+    "CWIARTKA",
+    "ZASLEPKA"
+   ],
+   "cat": "531",
+   "name": "Blotnik"
+  },
+  {
+   "all": [
+    "OSLONA",
+    "SILNIKA"
+   ],
+   "any": [
+    "GORNA",
+    "POKRYWA"
+   ],
+   "cat": "273",
+   "name": "Oslona pokrywa silnika gorna"
+  },
+  {
+   "all": [
+    "KLAPKA",
+    "WLEW"
+   ],
+   "cat": "1290",
+   "name": "Klapka wlewu paliwa"
+  },
+  {
+   "any": [
+    "ZASLEPKA"
+   ],
+   "all": [
+    "LAMPY"
+   ],
+   "cat": "143",
+   "name": "Zaslepka oslona lampy"
+  },
+  {
+   "any": [
+    "BOCZEK",
+    "TAPICERKA"
+   ],
+   "all": [
+    "BAGAZNIK"
+   ],
+   "cat": "908",
+   "name": "Boczek tapicerka bagaznika"
+  },
+  {
+   "all": [
+    "PRZETWORNICA"
+   ],
+   "cat": "1474",
+   "name": "Przetwornica xenon"
+  },
+  {
+   "all": [
+    "RURA"
+   ],
+   "any": [
+    "DOLOT",
+    "REZONATOR"
+   ],
+   "cat": "293",
+   "name": "Rura dolot rezonator"
+  },
+  {
+   "all": [
+    "KLAKSON"
+   ],
+   "cat": "1289",
+   "name": "Klakson"
+  },
+  {
+   "all": [
+    "LUSTERKO",
+    "WEWN"
+   ],
+   "cat": "2051",
+   "name": "Lusterko wewnetrzne"
+  },
+  {
+   "all": [
+    "KOLUMNA",
+    "KIEROWNICZ"
+   ],
+   "cat": "337",
+   "name": "Kolumna kierownicza"
+  },
+  {
+   "all": [
+    "KRZYZAK"
+   ],
+   "any": [
+    "KIEROWNICZ",
+    "KOLUMNY"
+   ],
+   "cat": "336",
+   "name": "Krzyzak kolumny kierowniczej"
+  },
+  {
+   "all": [
+    "POMPA",
+    "ABS"
+   ],
+   "cat": "42",
+   "name": "Pompa ABS"
+  },
+  {
+   "any": [
+    "DYFERENCJAL",
+    "DYFER"
+   ],
+   "cat": "459",
+   "name": "Dyferencjal / most"
+  },
+  {
+   "any": [
+    "KATALIZATOR",
+    "DPF"
+   ],
+   "cat": "1407",
+   "name": "Katalizator / DPF"
+  },
+  {
+   "all": [
+    "FILTR"
+   ],
+   "any": [
+    "OPAROW",
+    "WEGLOWY"
+   ],
+   "cat": "1590",
+   "name": "Filtr weglowy oparow paliwa"
+  },
+  {
+   "all": [
+    "OBUDOWA",
+    "FILTRA",
+    "POWIETRZA"
+   ],
+   "cat": "291",
+   "name": "Obudowa filtra powietrza"
+  },
+  {
+   "all": [
+    "FILTRA",
+    "KABINOWEGO"
+   ],
+   "cat": "224",
+   "name": "Obudowa filtra kabinowego"
+  },
+  {
+   "all": [
+    "ZBIORNICZEK",
+    "WYROWNAWCZY"
+   ],
+   "cat": "230",
+   "name": "Zbiorniczek wyrownawczy"
+  },
+  {
+   "all": [
+    "ZBIORNICZEK",
+    "SPRYSKIWACZY"
+   ],
+   "cat": "130",
+   "name": "Zbiorniczek spryskiwaczy"
+  },
+  {
+   "all": [
+    "KLIMATYZACJI"
+   ],
+   "any": [
+    "RURKA",
+    "WAZ",
+    "PRZEWOD",
+    "RURA"
+   ],
+   "cat": "207",
+   "name": "Waz/rurka klimatyzacji"
+  },
+  {
+   "any": [
+    "STABILIZATOR"
+   ],
+   "catF": "367",
+   "catB": "395",
+   "name": "Drazek stabilizatora przod/tyl"
+  },
+  {
+   "all": [
+    "RAMIE",
+    "WYCIERACZ"
+   ],
+   "cat": "106",
+   "name": "Ramie wycieraczki"
+  },
+  {
+   "all": [
+    "POLKA"
+   ],
+   "any": [
+    "BAGAZNIK",
+    "TYLNA"
+   ],
+   "cat": "949",
+   "name": "Polka tylna bagaznika"
+  },
+  {
+   "all": [
+    "MASKI"
+   ],
+   "any": [
+    "WYGLUSZENIE",
+    "MATA",
+    "PODBITKA"
+   ],
+   "cat": "521",
+   "name": "Wygluszenie/mata maski"
+  },
+  {
+   "all": [
+    "ZAMEK",
+    "MASKI"
+   ],
+   "cat": "522",
+   "name": "Zamek maski"
+  },
+  {
+   "any": [
+    "MASKA",
+    "POKRYWA SILNIKA"
+   ],
+   "none": [
+    "ZAMEK",
+    "ZAWIAS",
+    "WYGLUSZENIE",
+    "MATA",
+    "PODBITKA",
+    "OSLONA",
+    "USZCZELKA",
+    "LINKA",
+    "GNIAZDO",
+    "GORNA"
+   ],
+   "cat": "519",
+   "name": "Maska pokrywa silnika"
+  },
+  {
+   "all": [
+    "KLAPA"
+   ],
+   "any": [
+    "BAGAZNIK",
+    "TYL"
+   ],
+   "none": [
+    "ZAMEK",
+    "ZAWIAS",
+    "USZCZELKA",
+    "PRZYCISK",
+    "SPOILER",
+    "LOTKA",
+    "KAMERA",
+    "ZASLEPKA",
+    "OSLONA",
+    "KLAPKA"
+   ],
+   "cat": "556",
+   "name": "Klapa bagaznika/tyl"
+  },
+  {
+   "all": [
+    "ZAWIAS",
+    "KLAPY"
+   ],
+   "cat": "557",
+   "name": "Zawias klapy"
+  },
+  {
+   "all": [
+    "USZCZELKA",
+    "KLAPY"
+   ],
+   "cat": "560",
+   "name": "Uszczelka klapy bagaznika"
+  },
+  {
+   "all": [
+    "LAMPA",
+    "TYL"
+   ],
+   "none": [
+    "ZASLEPKA",
+    "OSLONA",
+    "LISTWA"
+   ],
+   "cat": "152",
+   "name": "Lampa tyl"
+  },
+  {
+   "all": [
+    "REFLEKTOR"
+   ],
+   "none": [
+    "ODBLASK"
+   ],
+   "cat": "136",
+   "name": "Reflektor przod"
+  },
+  {
+   "all": [
+    "ANTENA"
+   ],
+   "cat": "1508",
+   "name": "Antena dachowa"
+  },
+  {
+   "all": [
+    "PODLOKIETNIK"
+   ],
+   "cat": "851",
+   "name": "Podlokietnik"
+  },
+  {
+   "all": [
+    "SCHOWEK",
+    "PASAZERA"
+   ],
+   "cat": "812",
+   "name": "Schowek pasazera"
+  },
+  {
+   "all": [
+    "SCHOWEK",
+    "KONSOLI"
+   ],
+   "cat": "826",
+   "name": "Schowek konsoli"
+  },
+  {
+   "all": [
+    "WLEW",
+    "PALIWA"
+   ],
+   "any": [
+    "RURA"
+   ],
+   "cat": "306",
+   "name": "Rura wlewu paliwa"
+  },
+  {
+   "all": [
+    "LISTWA",
+    "BLOTNIKA"
+   ],
+   "catF": "1496",
+   "catB": "1768",
+   "name": "Listwa blotnika przod/tyl"
+  },
+  {
+   "all": [
+    "OSLONA",
+    "DESKI"
+   ],
+   "cat": "817",
+   "name": "Oslona deski dolna"
+  },
+  {
+   "any": [
+    "KURTYNA"
+   ],
+   "all": [
+    "AIRBAG"
+   ],
+   "cat": "895",
+   "name": "Kurtyna airbag"
+  },
+  {
+   "all": [
+    "PODUSZKA",
+    "KOLANOWA"
+   ],
+   "cat": "894",
+   "name": "Poduszka kolanowa"
+  },
+  {
+   "all": [
+    "PODUSZKA"
+   ],
+   "any": [
+    "PASAZERA"
+   ],
+   "cat": "893",
+   "name": "Poduszka pasazera"
+  },
+  {
+   "all": [
+    "KRATKA",
+    "NAWIEWU"
+   ],
+   "cat": "809",
+   "name": "Kratka nawiewu deski"
+  },
+  {
+   "any": [
+    "WYSWIETLACZ",
+    "EKRAN"
+   ],
+   "cat": "1277",
+   "name": "Wyswietlacz / head unit"
+  },
+  {
+   "all": [
+    "KOMPLET",
+    "CHLODNIC"
+   ],
+   "cat": "1916",
+   "name": "Komplet chlodnic"
+  },
+  {
+   "all": [
+    "ODBLASK"
+   ],
+   "cat": "166",
+   "name": "Odblask zderzaka -> reflektor (NIE zderzak)"
+  },
+  {
+   "all": [
+    "ABSORBER"
+   ],
+   "none": [
+    "BELKA",
+    "WZMOCNIENIE"
+   ],
+   "catF": "1341",
+   "catB": "1166",
+   "name": "Absorber zderzaka przod/tyl (NIE zderzak)"
+  },
+  {
+   "all": [
+    "KIEROWNICA",
+    "POWIETRZA"
+   ],
+   "cat": "1559",
+   "name": "Kierownica powietrza -> air guide"
+  },
+  {
+   "all": [
+    "ZALUZJA"
+   ],
+   "cat": "1559",
+   "name": "Zaluzja kierownica powietrza -> air guide"
+  },
+  {
+   "all": [
+    "KAMERA"
+   ],
+   "cat": "577",
+   "name": "Kamera -> reversing camera"
+  },
+  {
+   "all": [
+    "USZCZELKA",
+    "DRZWI"
+   ],
+   "catF": "1449",
+   "catB": "1443",
+   "name": "Uszczelka drzwi przod/tyl"
+  },
+  {
+   "all": [
+    "LISTWA"
+   ],
+   "any": [
+    "SZYBY",
+    "ZGARNIAJACA"
+   ],
+   "none": [
+    "ZDERZAK",
+    "PROG",
+    "BLOTNIK",
+    "NADKOL"
+   ],
+   "catF": "1841",
+   "catB": "1839",
+   "name": "Listwa szyby/zgarniajaca przod/tyl"
+  },
+  {
+   "all": [
+    "LISTWA",
+    "DRZWI"
+   ],
+   "none": [
+    "SZYBY",
+    "ZGARNIAJACA"
+   ],
+   "catF": "1217",
+   "catB": "1216",
+   "name": "Listwa drzwi molding przod/tyl"
+  },
+  {
+   "all": [
+    "NADKOL"
+   ],
+   "none": [
+    "LISTWA",
+    "NAKLADKA",
+    "PROG"
+   ],
+   "catF": "536",
+   "catB": "805",
+   "name": "Nadkole przod/tyl (splash guard)"
+  },
+  {
+   "all": [
+    "OSLONA",
+    "PODWOZIA"
+   ],
+   "catF": "539",
+   "catB": "1360",
+   "name": "Oslona podwozia przod/tyl"
+  },
+  {
+   "any": [
+    "KOLPAK"
+   ],
+   "cat": "749",
+   "name": "Kolpaki -> wheel cap"
+  },
+  {
+   "all": [
+    "RAMKA",
+    "TABLIC"
+   ],
+   "catF": "1506",
+   "catB": "1438",
+   "name": "Ramka tablicy rejestracyjnej przod/tyl"
+  },
+  {
+   "all": [
+    "PODLUZNIC"
+   ],
+   "cat": "1093",
+   "name": "Podluznica / zakonczenie -> front side member"
+  },
+  {
+   "all": [
+    "KIERUNKOWSKAZ",
+    "LUSTERK"
+   ],
+   "cat": "187",
+   "name": "Kierunkowskaz lusterka"
+  },
+  {
+   "all": [
+    "OSLONA",
+    "TERMICZN"
+   ],
+   "cat": "1621",
+   "name": "Oslona termiczna"
+  },
+  {
+   "all": [
+    "KONCOWK",
+    "WYDECH"
+   ],
+   "cat": "1907",
+   "name": "Oslona koncowki wydechu"
+  },
+  {
+   "any": [
+    "MAGLOWNICA"
+   ],
+   "cat": "333",
+   "name": "Maglownica / przekladnia kierownicza"
+  },
+  {
+   "any": [
+    "ATRAPA"
+   ],
+   "cat": "1214",
+   "name": "Atrapa chlodnicy / grill -> 1214"
+  },
+  {
+   "any": [
+    "KRATKA",
+    "RAMKA"
+   ],
+   "all": [
+    "ZDERZAK"
+   ],
+   "any2": [
+    "HALOGEN"
+   ],
+   "cat": "516",
+   "name": "Kratka halogenu -> 516"
+  },
+  {
+   "any": [
+    "KRATKA"
+   ],
+   "all": [
+    "ZDERZAK"
+   ],
+   "requireSide": "F",
+   "cat": "509",
+   "name": "Kratka zderzaka przod -> 509"
+  },
+  {
+   "all": [
+    "ZASLEPK",
+    "SPRYSKIWACZ"
+   ],
+   "cat": "510",
+   "name": "Zaslepka spryskiwacza lampy (rozdz. 23.4)"
+  },
+  {
+   "all": [
+    "ZASLEPK",
+    "HAK"
+   ],
+   "catF": "511",
+   "catB": "1788",
+   "name": "Zaslepka haka przod/tyl (rozdz. 23.2)"
+  },
+  {
+   "all": [
+    "HAK",
+    "HOLOW"
+   ],
+   "cat": "628",
+   "name": "Hak holowniczy (Tow bar) - NIE 506"
+  },
+  {
+   "all": [
+    "WAHACZ"
+   ],
+   "catF": "369",
+   "catB": "398",
+   "name": "Wahacz przod/tyl"
+  },
+  {
+   "any": [
+    "ZWROTNICA",
+    "PIASTA"
+   ],
+   "catF": "359",
+   "catB": "390",
+   "name": "Zwrotnica/piasta przod/tyl"
+  },
+  {
+   "all": [
+    "AMORTYZATOR"
+   ],
+   "none": [
+    "KLAPA",
+    "KLAPY",
+    "MASKI",
+    "BAGAZNIKA"
+   ],
+   "catF": "350",
+   "catB": "384",
+   "name": "Amortyzator zawieszenia przod/tyl"
+  },
+  {
+   "all": [
+    "POLOS"
+   ],
+   "catF": "451",
+   "catB": "444",
+   "name": "Polos przod/tyl"
+  },
+  {
+   "any": [
+    "BELKA",
+    "WZMOCNIENIE",
+    "POPRZECZKA"
+   ],
+   "all": [
+    "ZDERZAK"
+   ],
+   "none": [
+    "SLIZG",
+    "MOCOWANIE",
+    "SPOILER",
+    "DOKLADKA",
+    "PAS"
+   ],
+   "catF": "506",
+   "catB": "544",
+   "name": "Poprzeczka/belka zderzaka przod/tyl"
+  },
+  {
+   "all": [
+    "PAS"
+   ],
+   "any": [
+    "PRZEDNI",
+    "CZOLOW"
+   ],
+   "cat": "242",
+   "name": "Pas przedni / wzmocnienie czolowe"
+  },
+  {
+   "all": [
+    "ZDERZAK"
+   ],
+   "any": [
+    "SPOILER",
+    "DYFUZOR",
+    "DOKLADKA",
+    "LISTWA",
+    "NAKLADKA"
+   ],
+   "none": [
+    "KLAPA",
+    "KLAPY"
+   ],
+   "catF": "504",
+   "catB": "543",
+   "name": "Spoiler/dokladka/listwa ZDERZAKA = kategoria zderzaka (11A, gabaryt)"
+  },
+  {
+   "any": [
+    "SLIZG",
+    "MOCOWANIE"
+   ],
+   "all": [
+    "ZDERZAK"
+   ],
+   "catF": "508",
+   "catB": "546",
+   "name": "Slizg/mocowanie zderzaka przod/tyl"
+  },
+  {
+   "any": [
+    "SPOILER",
+    "LOTKA"
+   ],
+   "any2": [
+    "KLAPA",
+    "KLAPY"
+   ],
+   "cat": "563",
+   "name": "Lotka/spoiler klapy bagaznika"
+  },
+  {
+   "any": [
+    "PROG ",
+    "PROGU",
+    "PROGOWA",
+    "PROGOWY"
+   ],
+   "cat": "1605",
+   "name": "Listwa progowa (side skirt)"
+  },
+  {
+   "any": [
+    "BLOTNIK",
+    "NADKOL"
+   ],
+   "any2": [
+    "LISTWA",
+    "NAKLADKA"
+   ],
+   "catF": "535",
+   "catB": "1112",
+   "name": "Listwa blotnika/nadkola przod/tyl"
+  },
+  {
+   "all": [
+    "ZAWIAS"
+   ],
+   "any": [
+    "MASKA",
+    "MASKI"
+   ],
+   "cat": "520",
+   "name": "Zawias maski"
+  },
+  {
+   "all": [
+    "PODSZYBIE"
+   ],
+   "cat": "526",
+   "name": "Podszybie (wiper trim)"
+  },
+  {
+   "all": [
+    "OSLONA"
+   ],
+   "any": [
+    "DOLNA",
+    "POD ZDERZAK",
+    "UNDERTRAY",
+    "PLYTA"
+   ],
+   "cat": "539",
+   "name": "Oslona dolna / undertray"
+  },
+  {
+   "all": [
+    "OGRANICZNIK",
+    "DRZWI"
+   ],
+   "catF": "590",
+   "catB": "610",
+   "name": "Ogranicznik drzwi przod/tyl"
+  },
+  {
+   "all": [
+    "ZAMEK",
+    "DRZWI"
+   ],
+   "catF": "597",
+   "catB": "617",
+   "name": "Zamek drzwi przod/tyl"
+  },
+  {
+   "any": [
+    "MECHANIZM",
+    "PODNOSNIK"
+   ],
+   "all": [
+    "SZYBY"
+   ],
+   "catF": "601",
+   "catB": "621",
+   "name": "Mechanizm/podnosnik szyby przod/tyl"
+  },
+  {
+   "all": [
+    "GLOSNIK",
+    "DRZWI"
+   ],
+   "catF": "1280",
+   "catB": "1335",
+   "name": "Glosnik drzwi przod/tyl"
+  },
+  {
+   "all": [
+    "KLAMKA",
+    "DRZWI"
+   ],
+   "catF": "594",
+   "catB": "614",
+   "name": "Klamka drzwi przod/tyl"
+  },
+  {
+   "all": [
+    "DRZWI"
+   ],
+   "any": [
+    "BOCZEK",
+    "TAPICERKA"
+   ],
+   "catF": "863",
+   "catB": "878",
+   "name": "Boczek/tapicerka drzwi przod/tyl"
+  },
+  {
+   "all": [
+    "DRZWI"
+   ],
+   "any": [
+    "ZAWIAS",
+    "WSPORNIK"
+   ],
+   "catF": "589",
+   "catB": "609",
+   "name": "Zawias/wspornik drzwi przod/tyl"
+  },
+  {
+   "all": [
+    "SZYBA",
+    "TROJKAT"
+   ],
+   "cat": "1321",
+   "name": "Szyba trojkat (front triangle glass)"
+  },
+  {
+   "any": [
+    "TRZECI RZAD"
+   ],
+   "cat": "998",
+   "name": "Kanapa trzeci rzad"
+  },
+  {
+   "all": [
+    "DRZWI"
+   ],
+   "requireSide": "F",
+   "cat": "586",
+   "name": "Drzwi przednie",
+   "none": [
+    "OGRANICZNIK",
+    "ZAMEK",
+    "MECHANIZM",
+    "PODNOSNIK",
+    "GLOSNIK",
+    "KLAMKA",
+    "BOCZEK",
+    "TAPICERKA",
+    "USZCZELKA",
+    "LISTWA",
+    "WSPORNIK",
+    "MOCOWANIE",
+    "OSLONA",
+    "SZYBA",
+    "RAMKA",
+    "ZAWIAS",
+    "KIERUNKOWSKAZ",
+    "LUSTERK"
+   ]
+  },
+  {
+   "any": [
+    "RAMKA",
+    "KRATKA"
+   ],
+   "all": [
+    "ZDERZAK"
+   ],
+   "requireSide": "B",
+   "cat": "1437",
+   "name": "Ramka kratki zderzaka tyl"
+  },
+  {
+   "all": [
+    "OSLONA",
+    "SLUPKA"
+   ],
+   "none": [
+    "LISTWA",
+    "RAMKA"
+   ],
+   "cat": "1096",
+   "name": "Oslona slupka drzwi pillar"
+  },
+  {
+   "any": [
+    "SLUPKA A",
+    "SLUPEK A"
+   ],
+   "cat": "979",
+   "name": "Slupek A (pillar trim)",
+   "none": [
+    "DRZWI"
+   ]
+  },
+  {
+   "any": [
+    "SLUPKA B",
+    "SLUPEK B"
+   ],
+   "cat": "980",
+   "name": "Slupek B",
+   "none": [
+    "DRZWI"
+   ]
+  },
+  {
+   "any": [
+    "SLUPKA C",
+    "SLUPEK C"
+   ],
+   "cat": "982",
+   "name": "Slupek C",
+   "none": [
+    "DRZWI"
+   ]
+  },
+  {
+   "any": [
+    "SLUPKA D",
+    "SLUPEK D"
+   ],
+   "cat": "983",
+   "name": "Slupek D",
+   "none": [
+    "DRZWI"
+   ]
+  },
+  {
+   "all": [
+    "ZDERZAK"
+   ],
+   "none": [
+    "SLIZG",
+    "MOCOWANIE",
+    "KRATKA",
+    "RAMKA",
+    "BELKA",
+    "WZMOCNIENIE",
+    "ZASLEPKA",
+    "HAK"
+   ],
+   "catF": "504",
+   "catB": "543",
+   "name": "Goly zderzak kompletny przod/tyl"
+  }
+ ]
+}
