@@ -8,7 +8,7 @@ window.OVOKO_RAW='https://raw.githubusercontent.com/jarinwz-spec/ovoko-toolkit/m
 window.OVOKO_UNSHIP_CATS=['1097','1996','934','1322','1093'];
 (function(){
 var NL=String.fromCharCode(10);
-function fetchText(f){return fetch(window.OVOKO_RAW+f,{cache:'no-store'}).then(function(r){if(!r.ok)throw new Error('fetch '+f+' '+r.status);return r.text();});}
+function fetchText(f){return fetch(window.OVOKO_RAW+f+'?t='+Date.now(),{cache:'no-store'}).then(function(r){if(!r.ok)throw new Error('fetch '+f+' '+r.status);return r.text();});}
 function loadMaps(acct){
   if(window._MAPS&&window._MAPS._acct===acct)return Promise.resolve(window._MAPS);
   var mapFile=acct==='bielsko'?'bielsko_car_models_map_2026-05-29.json':'jaworze_car_models_map_2026-05-29.json';
