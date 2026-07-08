@@ -374,6 +374,15 @@
    "name": "Uszczelka klapy bagaznika"
   },
   {
+   "any": [
+    "PRZECIWMGIELN",
+    "PRZECIWMGLOW"
+   ],
+   "catF": "173",
+   "catB": "176",
+   "name": "Lampa przeciwmgielna przod(173)/tyl(176) - NIE tail light 152"
+  },
+  {
    "all": [
     "LAMPA",
     "TYL"
